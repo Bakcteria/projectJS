@@ -1,10 +1,3 @@
-var leftBoarderWidth = 1;
-let second = 2;
-const pi = 3.14;
-
-//console.log(4/0);
-//console.log('string'*9);
-
 let person = {
     name: "Jhon",
     age: 19,
@@ -12,7 +5,6 @@ let person = {
 }
 
 console.log(person.name);
-//alert("Hello World!");
 console.log(person.age);
 
 let arr = ['plum.png','orange.jpg','apple.bmp'];
@@ -28,3 +20,4 @@ console.log(arr[0]);
 //console.log(answer2);
 
 console.log("Andrey " + 5);
+console.log("My little pony");
