@@ -1,21 +1,3 @@
-let person = {
-    name: "Jhon",
-    age: 19,
-    isMaried: false
-}
+let money = prompt("Ваш бюджет на месяц?");
+let date = prompt("Введите дату в формате YYYY-MM-DD");
 
-console.log(person.name);
-console.log(person.age);
-
-let arr = ['plum.png','orange.jpg','apple.bmp'];
-
-console.log(arr[0]);
-
-//let answer1 = confirm("Are you here?");
-
-//console.log(answer);
-
-//let answer2 = prompt("Есть ли вам 18", "Yes");
-
-//console.log(answer2);
-console.log("My little pony");
