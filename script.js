@@ -18,6 +18,4 @@ console.log(arr[0]);
 //let answer2 = prompt("Есть ли вам 18", "Yes");
 
 //console.log(answer2);
-
-console.log("Andrey " + 5);
 console.log("My little pony");
