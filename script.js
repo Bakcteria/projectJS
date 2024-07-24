@@ -18,4 +18,5 @@ let quest1 = prompt("Введите обязательную статью рас
 appData.expenses.quest1 = quest2;
 appData.expenses.quest3 = quest4;
 
-alert(appData.expenses/30);
+alert(appData.budget/30);
+console.log(appData.expenses.quest1);
