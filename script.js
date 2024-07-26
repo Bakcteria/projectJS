@@ -1,5 +1,15 @@
-let money = +prompt("Ваш бюджет на месяц?");
-let date = prompt("Введите дату в формате YYYY-MM-DD");
+let money, date;
+
+function start() {
+    money = +prompt("Ваш бюджет на месяц?");
+    date = prompt("Введите дату в формате YYYY-MM-DD");
+
+    while(isNaN(money) || money == "" || money == null) {
+        money = +prompt("Ваш бюджет на месяц?");
+    }
+}
+
+start();
 
 let appData = {
     budget: money,
@@ -7,24 +17,28 @@ let appData = {
     expenses: {},
     optionalExpenses: {},
     income: [],
-    saving: false
+    saving: true
 }
 
-for (let i = 0; i < 2; i++){
-    let quest1 = prompt("Введите обязательную статью расходов в этом месяце", ''),
-        quest2 = prompt("Во сколько обойдется?", '');
-
-        if ((typeof(quest1)) === 'string' && (typeof(quest1)) != null && (typeof(quest2)) != null
-            && quest1 != '' && quest2 != '' && quest1.length < 50) {
-            console.log("true");
-            appData.expenses[quest1] = quest2;
-        }
-        else {
-            i--;
-        }
+function chooseExpenses() {
+    for (let i = 0; i < 1; i++){
+        let quest1 = prompt("Введите обязательную статью расходов в этом месяце", ''),
+            quest2 = prompt("Во сколько обойдется?", '');
+    
+            if ((typeof(quest1)) === 'string' && (typeof(quest1)) != null && (typeof(quest2)) != null
+                && quest1 != '' && quest2 != '' && quest1.length < 50) {
+                console.log("true");
+                appData.expenses[quest1] = quest2;
+            }
+            else {
+                i--;
+            }
+    }
 }
 
-appData.moneyPerDay = appData.budget / 30;
+chooseExpenses();
+
+appData.moneyPerDay = (appData.budget / 30).toFixed();
 
 alert("Ежедневный бюджет: " + appData.moneyPerDay);
 
@@ -42,3 +56,15 @@ else {
 }
 
 console.log(appData);
+
+function checkSavings() {
+    if (appData.saving == true) {
+        let save = +prompt("Какова сумма накоплений?"),
+        percent = +prompt("Под какой процент");
+
+        appData.monthIncome = save/100/12*percent;
+        alert("Доход в месяц с вашего депозита: " + appData.monthIncome);
+    }
+}
+
+checkSavings();
